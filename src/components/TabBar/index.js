@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './index.scss';
 import Tab from './Tab';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectTab } from '../../redux/tab/tabSlice';
@@ -14,7 +15,6 @@ export default function TabBar({ children }) {
     dispatch(selectTab(tab));
     setActiveTab(tab);
   };
-  console.log(children);
   return (
     <nav className='tabs'>
       <ol className='tab-list'>

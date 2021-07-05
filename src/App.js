@@ -29,8 +29,8 @@ function App() {
   }, [contactList, selectedTab, contactSelected]);
 
   const generateContent = (list) => {
-    const card = list[selectedTab]?.map((item) => (
-      <ContactCard data={item} activeId={contactSelected} />
+    const card = list[selectedTab]?.map((item, id) => (
+      <ContactCard data={item} activeId={contactSelected} key={id} />
     ));
     setContent(card);
   };

@@ -16,7 +16,7 @@ export default function Tab({ label, onClick, activeTab, quantity }) {
     <li className={className} onClick={itemClick}>
       <span className={`letter ${quantity === 0 ? 'empty' : ''}`}>
         {label}
-        <small class='subindex'>{quantity}</small>
+        <small className='subindex'>{quantity}</small>
       </span>
     </li>
   );

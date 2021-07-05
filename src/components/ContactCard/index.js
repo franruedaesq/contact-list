@@ -3,7 +3,7 @@ import './index.scss';
 import { setSelectedContact } from '../../redux/contacts/contactsSlice';
 import { useDispatch } from 'react-redux';
 
-export default function ContactCard({ data, activeId }) {
+export default function ContactCard({ data, activeId, index }) {
   const {
     name,
     lastName,
@@ -19,10 +19,8 @@ export default function ContactCard({ data, activeId }) {
   } = data;
   const dispatch = useDispatch();
   const [showCard, setShowCard] = useState(false);
-
   const handleClick = () => {
     dispatch(setSelectedContact(id));
-    console.log(showCard);
     if (!showCard) {
       setShowCard(!showCard);
     }
@@ -39,7 +37,9 @@ export default function ContactCard({ data, activeId }) {
 
   return (
     <article
-      className={`contactCard ${showCard ? 'contactCard--show' : ''}`}
+      className={`contactCard ${
+        showCard ? 'contactCard--show' : 'contactCard--hide'
+      }`}
       onClick={handleClick}
     >
       <h3
@@ -54,10 +54,15 @@ export default function ContactCard({ data, activeId }) {
           showCard ? 'contactCard_body--show' : 'contactCard_body--hide'
         }`}
       >
-        <picture className='contactCard_img'>
-          <source srcset={img} media='(min-width: 800px)' />
-          <img src={img} alt={`${name} ${lastName}`} />
-        </picture>
+        <div className='contactCard_header'>
+          <h3>
+            {name} {lastName}
+          </h3>
+          <picture className='contactCard_img'>
+            <source srcSet={img} media='(min-width: 800px)' />
+            <img src={img} alt={`${name} ${lastName}`} />
+          </picture>
+        </div>
         <div>
           <span className='contactCard_item'>
             <strong>E-mail:</strong>
