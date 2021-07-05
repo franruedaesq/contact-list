@@ -1,0 +1,13 @@
+.contactContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 500px) {
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+  }
+}
