@@ -17,20 +17,23 @@ export default function TabBar({ children }) {
   };
   return (
     <nav className='tabs'>
-      <ol className='tab-list'>
-        {children.map((child, index) => {
-          const { label, quantity } = child.props;
-          return (
-            <Tab
-              activeTab={activeTab}
-              key={index}
-              label={label}
-              onClick={onClickTabItem}
-              quantity={quantity}
-            />
-          );
-        })}
-      </ol>
+      <div className='tab-list__container'>
+        <ol className='tab-list'>
+          {children.map((child, index) => {
+            const { label, quantity } = child.props;
+            return (
+              <Tab
+                activeTab={activeTab}
+                key={index}
+                label={label}
+                onClick={onClickTabItem}
+                quantity={quantity}
+              />
+            );
+          })}
+        </ol>
+      </div>
+
       <ContactContainer>
         {children.map((child) => {
           if (child.props.label !== activeTab) return undefined;

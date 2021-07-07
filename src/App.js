@@ -36,7 +36,7 @@ function App() {
   };
   return (
     <div className='App'>
-      <h4>{configJson.title}</h4>
+      <h4 className='app_title'>{configJson.title}</h4>
       <TabBar>
         {configJson.tabs.map((letter) => (
           <div label={letter} quantity={contactList[letter]?.length}>

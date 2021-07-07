@@ -6,3 +6,29 @@
     flex-direction: row;
   }
 }
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  display: flex;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    flex-flow: wrap;
+    width: 45px;
+    overflow: auto;
+    height: 80vh;
+  }
+  &__container {
+    width: 100%;
+    background: white;
+    height: 90px;
+    position: fixed;
+    z-index: 1;
+    margin-top: 50px;
+
+    @media (max-width: 500px) {
+      height: 15px;
+    }
+  }
+}

@@ -4,19 +4,31 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-.tab-list {
-  border-bottom: 1px solid #ccc;
-  padding-left: 0;
-  display: flex;
-
-  @media (max-width: 500px) {
-    flex-direction: column;
-    flex-flow: wrap;
-    width: 45px;
-    overflow: auto;
-    height: 80vh;
-  }
+.app_title {
+  text-align: center;
+  font-size: 25px;
+  margin: 0;
+  font-weight: bold;
+  background: white;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 1;
 }
+
+// .tab-list {
+//   border-bottom: 1px solid #ccc;
+//   padding-left: 0;
+//   display: flex;
+
+//   @media (max-width: 500px) {
+//     flex-direction: column;
+//     flex-flow: wrap;
+//     width: 45px;
+//     overflow: auto;
+//     height: 80vh;
+//   }
+// }
 
 .tab-list-item {
   display: inline-block;
@@ -30,6 +42,10 @@
   background-color: rgb(243, 243, 243);
   display: flex;
   justify-content: center;
+}
+
+.notClick {
+  pointer-events: none;
 }
 
 .tab-list-item:hover {

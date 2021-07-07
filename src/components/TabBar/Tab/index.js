@@ -13,7 +13,10 @@ export default function Tab({ label, onClick, activeTab, quantity }) {
   const className = label !== selectedTab ? item : `${item} ${activeItem}`;
 
   return (
-    <li className={className} onClick={itemClick}>
+    <li
+      className={quantity === 0 ? 'tab-list-item notClick' : className}
+      onClick={itemClick}
+    >
       <span className={`letter ${quantity === 0 ? 'empty' : ''}`}>
         {label}
         <small className='subindex'>{quantity}</small>
