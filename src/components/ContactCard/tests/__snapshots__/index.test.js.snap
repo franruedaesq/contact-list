@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test should match snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="contactCard contactCard--show"
+    data-testid="contactCard_container"
+  >
+    <h3
+      class="contactCard_title contactCard_title--show"
+    >
+      Monica Lewis
+    </h3>
+    <div
+      class="contactCard_body contactCard_body--show"
+    >
+      <div
+        class="contactCard_header"
+      >
+        <h3>
+          Monica Lewis
+        </h3>
+        <picture
+          class="contactCard_img"
+        >
+          <source
+            media="(min-width: 800px)"
+            srcset="http://www.img.com"
+          />
+          <img
+            alt="Monica Lewis"
+            src="http://www.img.com"
+          />
+        </picture>
+      </div>
+      <div>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            E-mail:
+          </strong>
+          monicalewis@email.com
+        </span>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            Phone:
+          </strong>
+          254233343
+        </span>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            Street:
+          </strong>
+          2500 Hardly Steet
+        </span>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            City:
+          </strong>
+          Rosario
+        </span>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            State:
+          </strong>
+          Santa Fe
+        </span>
+        <span
+          class="contactCard_item"
+        >
+          <strong>
+            Postcode:
+          </strong>
+          5300
+        </span>
+      </div>
+    </div>
+    <button
+      aria-label="Close Contact Card"
+      class="contactCard_close contactCard_close--show"
+      data-testid="contactCard_close"
+    >
+      ×
+    </button>
+  </article>
+</DocumentFragment>
+`;

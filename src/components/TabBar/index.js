@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './index.scss';
 import Tab from './Tab';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectTab } from '../../redux/tab/tabSlice';
-import ContactContainer from '../ContactContainer';
+import { selectTab } from 'redux/tab/tabSlice';
+import ContactContainer from 'components/ContactContainer';
 
 export default function TabBar({ children }) {
   const dispatch = useDispatch();

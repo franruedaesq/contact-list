@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './App.scss';
+import 'App.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import TabBar from './components/TabBar';
-import { configJson } from './configuration';
-import { fetchData } from './services/users';
-import { getContacts } from './redux/contacts/contactsSlice';
-import { createContactList } from './utils/format-data';
-import ContactCard from './components/ContactCard';
+import TabBar from 'components/TabBar';
+import { configJson } from 'configuration';
+import { fetchData } from 'services/users';
+import { getContacts } from 'redux/contacts/contactsSlice';
+import { createContactList } from 'utils/format-data';
+import ContactCard from 'components/ContactCard';
 
 function App() {
   const dispatch = useDispatch();

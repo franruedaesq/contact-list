@@ -1,4 +1,4 @@
-import { configJson } from '../configuration';
+import { configJson } from 'configuration';
 
 export const createContactList = (array = []) => {
   const agenda = {};

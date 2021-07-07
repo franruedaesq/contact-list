@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tabReducer from './tab/tabSlice';
-import contactReducer from './contacts/contactsSlice';
+import tabReducer from 'redux/tab/tabSlice';
+import contactReducer from 'redux/contacts/contactsSlice';
 
 export default configureStore({
   reducer: {

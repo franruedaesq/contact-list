@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import { setSelectedContact } from '../../redux/contacts/contactsSlice';
+import { setSelectedContact } from 'redux/contacts/contactsSlice';
 import { useDispatch } from 'react-redux';
 
 export default function ContactCard({ data, activeId, index }) {
@@ -37,6 +37,7 @@ export default function ContactCard({ data, activeId, index }) {
 
   return (
     <article
+      data-testid='contactCard_container'
       className={`contactCard ${
         showCard ? 'contactCard--show' : 'contactCard--hide'
       }`}
@@ -91,6 +92,7 @@ export default function ContactCard({ data, activeId, index }) {
         </div>
       </div>
       <button
+        data-testid='contactCard_close'
         className={`contactCard_close ${
           showCard ? 'contactCard_close--show' : ''
         }`}
