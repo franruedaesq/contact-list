@@ -59,7 +59,11 @@ export default function ContactCard({ data, activeId, index }) {
           <h3>
             {name} {lastName}
           </h3>
-          <picture className='contact-card_img'>
+          <picture
+            className={`contact-card_img ${
+              showCard ? 'contact-card_img--show' : 'contact-card_img--hide'
+            }`}
+          >
             <source srcSet={img} media='(min-width: 800px)' />
             <img src={img} alt={`${name} ${lastName}`} />
           </picture>
