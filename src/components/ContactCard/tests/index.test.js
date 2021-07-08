@@ -47,7 +47,6 @@ describe('test', () => {
       </Provider>
     );
     const card = component.getByTestId('contactCard_container');
-    console.log(card);
     expect(card).toHaveClass('contactCard--hide');
   });
   it('should be show', () => {
@@ -59,7 +58,6 @@ describe('test', () => {
       </Provider>
     );
     const card = component.getByTestId('contactCard_container');
-    console.log(card);
     expect(card).toHaveClass('contactCard--show');
   });
   it('should hide data when close button is clicked', () => {
@@ -73,7 +71,6 @@ describe('test', () => {
     const closeButton = component.getByTestId('contactCard_close');
     fireEvent.click(closeButton);
     const card = component.getByTestId('contactCard_container');
-    console.log(card);
     expect(card).toHaveClass('contactCard--hide');
   });
   it('should show data when the card is clicked', () => {

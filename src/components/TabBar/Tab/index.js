@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import './index.scss';
 
 export default function Tab({ label, onClick, activeTab, quantity }) {
   const selectedTab = useSelector((state) => state.tab.selectedTab);
@@ -8,7 +9,7 @@ export default function Tab({ label, onClick, activeTab, quantity }) {
   };
 
   const item = 'tab-list-item';
-  const activeItem = 'tab-list-active';
+  const activeItem = 'tab-list-item--active';
 
   const className = label !== selectedTab ? item : `${item} ${activeItem}`;
 

@@ -7,7 +7,7 @@ export default function ContactContainer({ children = [] }) {
   const firstColumn = cards.slice(0, half);
   const secondColumnd = cards.slice(half, cards.length);
   return (
-    <div className='contactContainer'>
+    <div className='contact-container'>
       <div>{firstColumn}</div>
       <div>{secondColumnd}</div>
     </div>

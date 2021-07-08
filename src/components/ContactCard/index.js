@@ -37,64 +37,76 @@ export default function ContactCard({ data, activeId, index }) {
 
   return (
     <article
-      data-testid='contactCard_container'
-      className={`contactCard ${
-        showCard ? 'contactCard--show' : 'contactCard--hide'
+      data-testid='contact-card_container'
+      className={`contact-card ${
+        showCard ? 'contact-card--show' : 'contact-card--hide'
       }`}
       onClick={handleClick}
     >
       <h3
-        className={`contactCard_title contactCard_title${
+        className={`contact-card_title contact-card_title${
           showCard ? '--show' : ''
         }`}
       >
         {name} {lastName}
       </h3>
       <div
-        className={`contactCard_body ${
-          showCard ? 'contactCard_body--show' : 'contactCard_body--hide'
+        className={`contact-card_body ${
+          showCard ? 'contact-card_body--show' : 'contact-card_body--hide'
         }`}
       >
-        <div className='contactCard_header'>
+        <div className='contact-card_header'>
           <h3>
             {name} {lastName}
           </h3>
-          <picture className='contactCard_img'>
+          <picture className='contact-card_img'>
             <source srcSet={img} media='(min-width: 800px)' />
             <img src={img} alt={`${name} ${lastName}`} />
           </picture>
         </div>
         <div>
-          <span className='contactCard_item'>
-            <strong>E-mail:</strong>
-            {email}
-          </span>
-          <span className='contactCard_item'>
-            <strong>Phone:</strong>
-            {phone}
-          </span>
-          <span className='contactCard_item'>
-            <strong>Street:</strong>
-            {steetNumber} {street}
-          </span>
-          <span className='contactCard_item'>
-            <strong>City:</strong>
-            {city}
-          </span>
-          <span className='contactCard_item'>
-            <strong>State:</strong>
-            {state}
-          </span>
-          <span className='contactCard_item'>
-            <strong>Postcode:</strong>
-            {postCode}
-          </span>
+          {email && (
+            <span className='contact-card_item'>
+              <strong>E-mail:</strong>
+              {email}
+            </span>
+          )}
+          {phone && (
+            <span className='contact-card_item'>
+              <strong>Phone:</strong>
+              {phone}
+            </span>
+          )}
+          {steetNumber && (
+            <span className='contact-card_item'>
+              <strong>Street:</strong>
+              {steetNumber} {street}
+            </span>
+          )}
+          {city && (
+            <span className='contact-card_item'>
+              <strong>City:</strong>
+              {city}
+            </span>
+          )}
+          {state && (
+            <span className='contact-card_item'>
+              <strong>State:</strong>
+              {state}
+            </span>
+          )}
+          {postCode && (
+            <span className='contact-card_item'>
+              <strong>Postcode:</strong>
+              {postCode}
+            </span>
+          )}
         </div>
       </div>
       <button
-        data-testid='contactCard_close'
-        className={`contactCard_close ${
-          showCard ? 'contactCard_close--show' : ''
+        data-testid='contact-card_close'
+        className={`contact-card_close ${
+          showCard ? 'contact-card_close--show' : ''
         }`}
         aria-label='Close Contact Card'
         onClick={closeCard}
