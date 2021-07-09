@@ -3,6 +3,13 @@
 The [Contact List](https://contact-list-seven.vercel.app/) App was built using React.<br>
 Redux Toolkit is used for the application state management<br>
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live version 
+
+You can access to a Live version of the app by clicking in the next link.
+[https://contact-list-seven.vercel.app/](https://contact-list-seven.vercel.app/)<br>
+The app is being deploy using [Vercel for GitHub](https://vercel.com/docs/git/vercel-for-github) which automatically deploys a GitHub projects on every branch push with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
+
 ## Installation
 
 Using npm:
