@@ -1,7 +1,7 @@
 # contact-list
 
-The [Contact List](https://contact-list-seven.vercel.app/) App was built using React.
-Redux Toolkit is used for the application state management
+The [Contact List](https://contact-list-seven.vercel.app/) App was built using React.<br>
+Redux Toolkit is used for the application state management<br>
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Installation
 
