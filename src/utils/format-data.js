@@ -25,4 +25,5 @@ export const formatUserData = (array = []) =>
     id: item.login.uuid,
     letter: item.name.last[0].toLowerCase(),
     img: item.picture.large,
+    userName: item.login.username,
   }));

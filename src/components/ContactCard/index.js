@@ -16,6 +16,7 @@ export default function ContactCard({ data, activeId, index }) {
     steetNumber,
     img,
     id,
+    userName,
   } = data;
   const dispatch = useDispatch();
   const [showCard, setShowCard] = useState(false);
@@ -66,7 +67,17 @@ export default function ContactCard({ data, activeId, index }) {
           >
             <source srcSet={img} media='(min-width: 800px)' />
             <img src={img} alt={`${name} ${lastName}`} />
+            <span>@{userName}</span>
           </picture>
+          <span
+            className={`contact-card__username ${
+              showCard
+                ? 'contact-card__username--show'
+                : 'contact-card__username--hide'
+            }`}
+          >
+            @{userName}
+          </span>
         </div>
         <div>
           {email && (
