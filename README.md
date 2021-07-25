@@ -13,8 +13,10 @@ The app is being deploy using [Vercel for GitHub](https://vercel.com/docs/git/ve
 ## Installation
 
 Using npm:
-### `npm start`
+### `npm install`
+Install all necessary dependencies.
 
+### `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
