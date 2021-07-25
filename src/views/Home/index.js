@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'views/Home/index.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectTab } from 'redux/tab/tabSlice';
 import TabBar from 'components/TabBar';
 import { configJson } from 'configuration';
 import { fetchData } from 'services/users';
@@ -14,6 +15,8 @@ const Home = () => {
     (state) => state.contacts
   );
   const selectedTab = useSelector((state) => state.tab.selectedTab);
+
+  const [activeTab, setActiveTab] = useState(selectedTab);
   const [content, setContent] = useState([]);
   const getData = async () => {
     const { results } = await fetchData();
@@ -28,22 +31,32 @@ const Home = () => {
     generateContent(contactList);
   }, [contactList, selectedTab, contactSelected]);
 
+  const onClickTabItem = (tab) => {
+    dispatch(selectTab(tab));
+    setActiveTab(tab);
+  };
+
   const generateContent = (list) => {
     const card = list[selectedTab]?.map((item, id) => (
       <ContactCard data={item} activeId={contactSelected} key={id} />
     ));
     setContent(card);
   };
+
+  const setItemSubtitle = (letter) => {
+    const quantity = contactList[letter]?.length
+    return quantity
+  }
+  setItemSubtitle()
+  const tabItemConfig = {
+    itemTitle: configJson.tabs,
+    itemSubtitle: setItemSubtitle
+  }
+
   return (
     <div className='App'>
       <h4 className='app_title'>{configJson.title}</h4>
-      <TabBar>
-        {configJson.tabs.map((letter) => (
-          <div label={letter} quantity={contactList[letter]?.length}>
-            {content ? content : '...'}
-          </div>
-        ))}
-      </TabBar>
+      <TabBar onClickTab={onClickTabItem} selectedTab={activeTab} tabItems={tabItemConfig} tabContent={content} />
     </div>
   );
 };

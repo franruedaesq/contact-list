@@ -1,63 +1,51 @@
-import React, { useState, useRef } from 'react';
-import './index.scss';
-import Tab from './Tab';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectTab } from 'redux/tab/tabSlice';
-import ContactContainer from 'components/ContactContainer';
-import { arrow_left_svg, arrow_right_svg } from 'assets/icons';
+import React, { useRef } from "react";
+import "./index.scss";
+import Tab from "./Tab";
+import ContactContainer from "components/ContactContainer";
+import { arrow_left_svg, arrow_right_svg } from "assets/icons";
 
-export default function TabBar({ children }) {
-  const dispatch = useDispatch();
+function TabBar({ children, onClickTab, selectedTab, tabItems, tabContent }) {
+  const { itemTitle, itemSubtitle } = tabItems;
   const navTab = useRef(null);
-  const selectedTab = useSelector((state) => state.tab.selectedTab);
-
-  const [activeTab, setActiveTab] = useState(selectedTab);
-
-  const onClickTabItem = (tab) => {
-    dispatch(selectTab(tab));
-    setActiveTab(tab);
-  };
-
   const scroll = (scrollOffset) => {
     navTab.current.scrollLeft += scrollOffset;
   };
 
   return (
-    <nav className='tab-list__nav'>
-      <div className='tab-list__container'>
+    <nav className="tab-list__nav">
+      <div className="tab-list__container">
         <button
-          className='tab-list__arrow-button tab-list__arrow-button--left'
+          className="tab-list__arrow-button tab-list__arrow-button--left"
           onClick={() => scroll(-40)}
+          aria-label="Scroll tab list to the left"
+          type="button"
         >
           {arrow_left_svg}
         </button>
-        <ol className='tab-list' ref={navTab}>
-          {children.map((child, index) => {
-            const { label, quantity } = child.props;
-            return (
-              <Tab
-                activeTab={activeTab}
-                key={index}
-                label={label}
-                onClick={onClickTabItem}
-                quantity={quantity}
-              />
-            );
-          })}
+        <ol className="tab-list" ref={navTab}>
+          {itemTitle.map((letter, index) => (
+            <Tab
+              activeTab={selectedTab}
+              key={index}
+              label={letter}
+              onClick={onClickTab}
+              quantity={itemSubtitle(letter)}
+              activeTab={selectedTab}
+            />
+          ))}
         </ol>
         <button
-          className='tab-list__arrow-button tab-list__arrow-button--right'
+          className="tab-list__arrow-button tab-list__arrow-button--right"
           onClick={() => scroll(40)}
+          aria-label="Scroll tab list to the right"
+          type="button"
         >
           {arrow_right_svg}
         </button>
       </div>
-      <ContactContainer>
-        {children.map((child) => {
-          if (child.props.label !== activeTab) return undefined;
-          return child.props.children;
-        })}
-      </ContactContainer>
+      <ContactContainer cards={tabContent} />
     </nav>
   );
 }
+
+export default TabBar;
